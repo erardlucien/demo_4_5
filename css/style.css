@@ -1,0 +1,148 @@
+/* general setup */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* for small screen */
+
+/* breadcrumb */
+
+.breadcrumb {
+    padding: 16px 0;
+    background-color: hsl(238, 53%, 38%);
+}
+
+/* breadcrumb-btn */
+
+.breadcrumb-btn {
+    display: none;
+}
+
+.breadcrumb-btn:checked ~ .logo-label-group > .breadcrumb-label {
+    transform: rotate(90deg);
+    transition: 0.4s;
+}
+
+.breadcrumb-btn:checked ~ .logo-label-group > .breadcrumb-label > .closed,
+.breadcrumb-btn:checked ~ .logo-label-group > .breadcrumb-label > .closed::before,
+.breadcrumb-btn:checked ~ .logo-label-group > .breadcrumb-label > .closed::after {
+    background-color: transparent;
+    transition: 0.4s;
+}
+
+.breadcrumb-btn:checked ~ .logo-label-group > .breadcrumb-label > .opened::before,
+.breadcrumb-btn:checked ~ .logo-label-group > .breadcrumb-label > .opened::after {
+    background-color: red;
+    transition: 0.4s;
+}
+
+.breadcrumb-btn:checked ~ .breadcrumb-menu {
+    display: block;
+}
+
+/* logo-label-group */
+
+.logo-label-group {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 16px;
+}
+
+/* logo */
+
+.logo {
+    color: white;
+}
+
+/* breadcrumb-label */
+
+.breadcrumb-label {
+    display: flex;
+    position: relative;
+    transition: 0.4s;
+}
+
+.breadcrumb-label:hover .closed::before {
+    transform: rotate(15deg);
+}
+
+.breadcrumb-label:hover .closed::after {
+    transform: rotate(-15deg);
+}
+
+/* breadcrumb-icon */
+
+.breadcrumb-icon {
+    display: block;
+    position: relative;
+    margin: 8px 0 0 0;
+    width: 23px;
+    height: 1px;
+    background-color: aliceblue;
+}
+
+.breadcrumb-icon::before,
+.breadcrumb-icon::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    background-color: aliceblue;
+}
+
+/* closed */
+
+.closed::before {
+    top: -6px;
+}
+
+.closed::after {
+    top: 6px;
+}
+
+/* opened */
+
+.opened,
+.opened::before,
+.opened::after {
+    background-color: transparent;
+}
+
+.opened {
+    position: absolute;
+}
+
+.opened::before {
+    transform: rotate(-45deg);  
+}
+
+.opened::after {
+    transform: rotate(45deg);
+}
+
+/* breadcrumb-menu */
+
+.breadcrumb-menu {
+    display: none;
+    margin: 0 16px;
+    list-style: none;
+}
+
+/* breadcrumb-link */
+
+.breadcrumb-link {
+    display: block;
+    padding: 16px;
+    width: 100px;
+    text-decoration: none;
+    color: white;
+}
+
+.breadcrumb-link:hover {
+    background-color: aqua;
+    border-radius: 4px;
+}
