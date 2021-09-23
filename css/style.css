@@ -137,12 +137,22 @@
 .breadcrumb-link {
     display: block;
     padding: 16px;
-    width: 120px;
     text-decoration: none;
     color: white;
 }
 
-.breadcrumb-link:hover {
-    background-color: aqua;
+.breadcrumb-link::before {
+    display: block;
+    content: '';
+    height: 20px;
     border-radius: 4px;
+    width: 120px;
+    position: absolute;
+    left: 15px;
+}
+
+.breadcrumb-link:hover::before {
+    background-color: rgba(47, 178, 201, 0.5);
+    width: 0;
+    transition: 0.9s;
 }
