@@ -20,7 +20,7 @@
 
 .breadcrumb {
     padding: 16px 0;
-    background-color: hsl(238, 53%, 38%);
+    background-color: hsla(238, 53%, 38%, 1);
 }
 
 /* breadcrumb-btn */
@@ -43,7 +43,7 @@
 
 .breadcrumb-btn:checked ~ .logo-label-group > .breadcrumb-label > .opened::before,
 .breadcrumb-btn:checked ~ .logo-label-group > .breadcrumb-label > .opened::after {
-    background-color: red;
+    background-color: hsl(0, 100%, 50%);
     transition: 0.4s;
 }
 
@@ -74,11 +74,13 @@
 }
 
 .breadcrumb-label:hover .closed::before {
-    transform: rotate(15deg);
+    width: 100%;
+    transition: 0.4s;
 }
 
 .breadcrumb-label:hover .closed::after {
-    transform: rotate(-15deg);
+    width: 100%;
+    transition: 0.4s;
 }
 
 /* breadcrumb-icon */
@@ -106,10 +108,12 @@
 
 .closed::before {
     top: -6px;
+    width: 12px;
 }
 
 .closed::after {
     top: 6px;
+    width: 26px;
 }
 
 /* opened */
@@ -146,6 +150,7 @@
     display: block;
     width: 120px;
     padding: 16px;
+    position: relative;
     text-decoration: none;
     color: white;
 }
@@ -153,15 +158,23 @@
 .breadcrumb-link::before {
     display: block;
     content: '';
-    height: 20px;
-    border-radius: 4px;
-    width: 120px;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     position: absolute;
-    left: 15px;
+}
+
+.breadcrumb-link:hover {
+    font-weight: bolder;
+    transition: 0.4s;
 }
 
 .breadcrumb-link:hover::before {
-    background-color: rgba(47, 178, 201, 0.5);
-    width: 0;
+    background-color: rgba(47, 178, 201, 1);
+    border-radius: 100%;
+    width: 0%;
     transition: 0.9s;
 }
